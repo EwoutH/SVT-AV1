@@ -19,7 +19,7 @@ jobs:
      - cd $TRAVIS_BUILD_DIR
      - cd Build
      - cmake ..
-     - make -j `nproc`
+     - make -j $(nproc)
      - sudo make install
      # Apply SVT-AV1 plugin and enable libsvtav1 to FFmpeg
      - git clone https://github.com/FFmpeg/FFmpeg ffmpeg
@@ -29,4 +29,4 @@ jobs:
      - export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/lib
      - export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:/usr/local/lib/pkgconfig
      - ./configure --enable-libsvtav1
-     - make --quiet -j `nproc`
+     - make --quiet -j $(nproc)
