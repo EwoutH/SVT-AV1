@@ -10,6 +10,14 @@ install:
 build:
   project: svt-av1.sln
 
-artifacts:                          
-    - path: bin\Release\*svt-av1*.*
+artifacts:
+    - path: bin\Release\*.*
       name: $(APPVEYOR_PROJECT_NAME)
+    - path: bin\Release\**\*.exe
+      name: $(APPVEYOR_PROJECT_NAME)-exe
+    - path: bin\Release\**\*.lib
+      name: $(APPVEYOR_PROJECT_NAME)-lib
+    - path: \**\*svt-av1*.exe
+      name: $(APPVEYOR_PROJECT_NAME)-exe
+    - path: \**\*svt-av1*.lib
+      name: $(APPVEYOR_PROJECT_NAME)-lib
