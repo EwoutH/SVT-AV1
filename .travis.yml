@@ -1,13 +1,5 @@
 language: c
-
-matrix:
-  include:
-    - dist: xenial
-      compiler: gcc
-    - dist: xenial
-      compiler: clang
-    - os: osx
-      osx_image: xcode10.1
+dist: xenial
 
 addons:
   apt:
@@ -15,6 +7,22 @@ addons:
      - cmake
      - yasm
 
-script:
- - cd Build/linux
- - ./build.sh release
+jobs:
+  include:
+   - script:
+     - cd Build/linux
+     - ./build.sh release
+   - script:
+     - cd Build
+     - cmake ..
+     - make -j nproc
+     - sudo make install
+     - cd $TRAVIS_BUILD_DIR
+     - git clone https://github.com/FFmpeg/FFmpeg ffmpeg
+     - cd ffmpeg
+     - git checkout release/4.1
+     - git apply $TRAVIS_BUILD_DIR/SVT-AV1/ffmpeg_plugin/0001-Add-ability-for-ffmpeg-to-run-svt-av1.patch
+     - export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/lib
+     - export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:/usr/local/lib/pkgconfig
+     - ./configure --enable-libsvtav1
+     - make -j nproc
