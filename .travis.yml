@@ -1,0 +1,12 @@
+language: c
+
+addons:
+  apt:
+    update: true
+    packages:
+     - cmake
+     - yasm
+
+script:
+ - cd Build/linux
+ - ./build.sh release
