@@ -1,8 +1,8 @@
 language: c
+dist: xenial
 
 addons:
   apt:
-    update: true
     packages:
      - cmake
      - yasm
