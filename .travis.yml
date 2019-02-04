@@ -1,6 +1,10 @@
 language: c
 dist: xenial
 
+compiler
+ - gcc
+ - clang
+
 addons:
   apt:
     packages:
