@@ -8,4 +8,5 @@ addons:
      - yasm
 
 script:
- - Build/linux/build.sh release
+ - cd Build/linux
+ - ./build.sh release
