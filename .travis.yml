@@ -6,6 +6,7 @@ addons:
     packages:
      - cmake
      - yasm
+     - nproc
 
 jobs:
   include:
