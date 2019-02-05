@@ -13,6 +13,14 @@ jobs:
      script:
      - cd Build/linux
      - ./build.sh release
+   - name: Coveralls
+     before_install:
+     - pip install --user cpp-coveralls
+     script:
+     - cd Build/linux
+     - ./build.sh release
+     after_success:
+     - coveralls
    - name: FFmpeg patch
      script:
      # Build and install SVT-AV1
