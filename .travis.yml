@@ -9,10 +9,23 @@ addons:
 
 jobs:
   include:
+   # General build job
    - name: SVT-AV1
      script:
      - cd Build/linux
      - ./build.sh release
+     
+   # Coveralls test job
+   - name: Coveralls
+     before_install:
+     - pip install --user cpp-coveralls
+     script:
+     - cd Build/linux
+     - ./build.sh release
+     after_success:
+     - coveralls
+     
+   # FFmpeg interation build
    - name: FFmpeg patch
      script:
      # Build and install SVT-AV1
