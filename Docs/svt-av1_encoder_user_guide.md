@@ -8,11 +8,9 @@
     - [Running the encoder](#running-the-encoder)
 3. [Legal Disclaimer](#legal-disclaimer)
 
-
 ## Introduction
 
 This document describes how to use the Scalable Video Technology for AV1 Encoder (SVT-AV1).  In particular, this user guide describes how to run the sample application with the respective dynamically linked library.
-
 
 ## Sample Application Guide
 
@@ -39,7 +37,6 @@ In order to reduce the size of the input original YUV file, the SVT-AV1 Encoder 
 This step consists of separating the 10 bit video samples into 8 bit and 2 bit planes so that each 10-bit picture will be represented as two separate pictures as shown in the figure below. As a result of the operation, the 2 least significant bits of the 10 bits will be written into a full byte.
 
  ![alt](10bit_unpacked.png)
-
 
 10-bit yuv420p10le unpacked
 
@@ -71,8 +68,6 @@ The sample application typically takes the following command line parameters:
 
 A text file that contains encoder parameters such as input file name, quantization parameter etc. Refer to the comments in the Config/Sample.cfg for specific details. The list of encoder parameters are also listed below. Note that command line parameters take precedence over the parameters included in the configuration file when there is a conflict.
 
-
-
 -i filename **[Required]**
 
 A YUV file (e.g. 8 bit 4:2:0 planar) containing the video sequence that will be encoded.  The dimensions of each image are specified by –w and –h as indicated below.
@@ -101,8 +96,6 @@ The intra period defines the interval of frames after which you insert an Intra 
 
 This token sets the bitrate control encoding mode [1: Variable Bitrate, 0: Constant QP]. When rc is set to 1, it is best to match the –lad (lookahead distance described in the next section) parameter to the -intra-period. When –rc is set to 0, a qp value is expected with the use of the –q command line option otherwise a default value is assigned (25).
 
-
-
 For example, the following command encodes 100 frames of the YUV video sequence into the bin bit stream file.  The picture is 1920 luma pixels wide and 1080 pixels high using the Sample.cfg configuration. The QP equals 30 and the md5 checksum is not included in the bit stream.
 
 SvtAv1EncApp.exe -c Sample.cfg -i CrowdRun\_1920x1080.yuv -w 1920 -h 1080 -n 100 -q 30 -intra-period 31 -b CrowdRun\_1920x1080\_qp30.bin
@@ -112,7 +105,6 @@ It should be noted that not all the encoder parameters present in the Sample.cfg
 #### List of all configuration parameters
 
 The encoder parameters present in the Sample.cfg file are listed in this table below along with their status of support, command line parameter and the range of values that the parameters can take.
-
 
 | **Configuration file parameter** | **Command line** |   **Range**   | **Default** | **Description** |
 | --- | --- | --- | --- | --- |
