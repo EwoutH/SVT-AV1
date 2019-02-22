@@ -6,7 +6,7 @@ install:
     - appveyor DownloadFile https://www.nasm.us/pub/nasm/releasebuilds/2.14.02/win64/nasm-2.14.02-win64.zip -FileName nasm.zip
     - 7z e -y nasm.zip
     - set PATH=%PATH%;%APPVEYOR_BUILD_FOLDER%
-    - cmake . -G "Visual Studio 15 2017 Win64" -DCMAKE_ASM_NASM_COMPILER="yasm.exe"
+    - cmake . -G "Visual Studio 15 2017 Win64"
 
 build:
   project: svt-av1.sln
