@@ -5,10 +5,10 @@ addons:
   apt:
     packages:
      - cmake
-     - yasm
+     - nasm
   homebrew:
     packages:
-      - yasm
+     - nasm
 
 jobs:
   include:
