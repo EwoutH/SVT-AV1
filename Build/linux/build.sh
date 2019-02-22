@@ -29,7 +29,7 @@ function build {
 }
 
 # Defines
-CMAKE_ASSEMBLER=yasm
+CMAKE_ASSEMBLER=nasm
 GCC_COMPILER=gcc
 ICC_COMPILER=/opt/intel/composerxe/bin/icc
 
