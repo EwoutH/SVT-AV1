@@ -512,6 +512,7 @@ void EbConfigCtor(EbConfig_t *config_ptr)
     config_ptr->performanceContext.maxLatency        = 0;
     config_ptr->performanceContext.totalLatency      = 0;
     config_ptr->performanceContext.byteCount         = 0;
+    config_ptr->performanceContext.psnr              = 0;
 
     // ASM Type
     config_ptr->asmType                              = 1;
