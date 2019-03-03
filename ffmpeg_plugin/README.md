@@ -8,7 +8,7 @@
 2. Apply SVT-AV1 plugin and enable libsvtav1 to FFmpeg
 - git clone https://github.com/FFmpeg/FFmpeg ffmpeg
 - cd ffmpeg
-- git checkout release/4.1
+- git checkout release/4.1.1
 - export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/lib
 - export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:/usr/local/lib/pkgconfig
 If no SVT-HEVC plugin in FFmpeg
