@@ -44,22 +44,22 @@ if(${CMAKE_GENERATOR_PLATFORM} MATCHES "Visual Studio 15 2017 Win64")
     set(CMAKE_ASM_NASM_FLAGS_DEBUG "")
 endif(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
 
-include(CTest)
+# include(CTest)
 
-set(USE_CODE_COVERAGE 0)
+# set(USE_CODE_COVERAGE 0)
 
 # Prepare for Coveralls
-set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/CMakeModules)
-if(USE_CODE_COVERAGE AND CMAKE_COMPILER_IS_GNUCXX)
-    include(CodeCoverage)
-    setup_target_for_coverage(${PROJECT_NAME}_coverage ${PROJECT_TEST_NAME} coverage)
-endif()
+# set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/CMakeModules)
+# if(USE_CODE_COVERAGE AND CMAKE_COMPILER_IS_GNUCXX)
+#     include(CodeCoverage)
+#     setup_target_for_coverage(${PROJECT_NAME}_coverage ${PROJECT_TEST_NAME} coverage)
+# endif()
 
 # Add Subdirectories
 add_subdirectory (Source/Lib)
 add_subdirectory (Source/App)
 add_subdirectory (Source/SimpleApp)
-if (BUILD_TESTING)
-    add_subdirectory (test)
-    add_subdirectory (third_party/googletest)
-endif()
+# if (BUILD_TESTING)
+#    add_subdirectory (test)
+#    add_subdirectory (third_party/googletest)
+# endif()
