@@ -3,7 +3,7 @@ configuration: Release
 
 environment:
   matrix:
-   - vsconfig: "Visual Studio 15 2017 AArch64"
+   - vsconfig: "Visual Studio 15 2017 ARM"
    - vsconfig: "Visual Studio 15 2017 Win64"
 
 install:
