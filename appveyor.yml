@@ -1,16 +1,16 @@
-image: Visual Studio 2017
+image: Visual Studio 2019 Preview
 configuration: Release
 
 environment:
   matrix:
-   - vsconfig: 'Visual Studio 15 2017 ARM'
-   - vsconfig: 'Visual Studio 15 2017 Win64'
+   - arch: "ARM64"
+   - arch: "x64"
 
 install:
     - git submodule update --init
     - appveyor DownloadFile http://www.tortall.net/projects/yasm/releases/yasm-1.3.0-win64.exe -FileName yasm.exe
     - set PATH=%PATH%;%APPVEYOR_BUILD_FOLDER%
-    - cmake . -G %vsconfig% -DCMAKE_ASM_NASM_COMPILER="yasm.exe"
+    - cmake . -G "Visual Studio 16 2019" -A %arch% -DCMAKE_ASM_NASM_COMPILER="yasm.exe"
 
 build:
   project: svt-av1.sln
