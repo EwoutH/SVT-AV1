@@ -271,23 +271,24 @@ int32_t main(int32_t argc, char* argv[])
                         // Interlaced Video
                         if (configs[instanceCount]->interlacedVideo || configs[instanceCount]->separateFields) {
 
-                            printf("\nChannel %u\nAverage Speed:\t\t%.0f fields per sec\nTotal Encoding Time:\t\t%.0f ms\nTotal Execution Time:\t\t%.2f ms\nAverage Latency:\t%.0f ms\nMax Latency:\t\t%u ms\n",
+                            printf("\nChannel %u\nAverage Speed:\t\t%.0f fields per sec\nTotal Encoding Time:\t\t%.0f ms\nTotal Execution Time:\t\t%.2f ms\nAverage Latency:\t%.0f ms\nMax Latency:\t\t%u ms\nPSNR:\t%.4f\n",
                                 (uint32_t)(instanceCount + 1),
                                 configs[instanceCount]->performanceContext.averageSpeed,
                                 configs[instanceCount]->performanceContext.total_encode_time * 1000,
                                 configs[instanceCount]->performanceContext.total_execution_time * 1000,
                                 configs[instanceCount]->performanceContext.averageLatency,
-                                (uint32_t)(configs[instanceCount]->performanceContext.maxLatency));
+                                (uint32_t)(configs[instanceCount]->performanceContext.maxLatency),
+                                PSNR);
                         }
                         else {
-                            printf("\nChannel %u\nAverage Speed:\t\t%.3f fps\nTotal Encoding Time:\t%.0f ms\nTotal Execution Time:\t%.0f ms\nAverage Latency:\t%.0f ms\nMax Latency:\t\t%u ms\n",
+                            printf("\nChannel %u\nAverage Speed:\t\t%.3f fps\nTotal Encoding Time:\t%.0f ms\nTotal Execution Time:\t%.0f ms\nAverage Latency:\t%.0f ms\nMax Latency:\t\t%u ms\nPSNR:\t%.4f\n",
                                 (uint32_t)(instanceCount + 1),
                                 configs[instanceCount]->performanceContext.averageSpeed,
                                 configs[instanceCount]->performanceContext.total_encode_time * 1000,
                                 configs[instanceCount]->performanceContext.total_execution_time * 1000,
                                 configs[instanceCount]->performanceContext.averageLatency,
-                                (uint32_t)(configs[instanceCount]->performanceContext.maxLatency));
-
+                                (uint32_t)(configs[instanceCount]->performanceContext.maxLatency),
+                                configs[instanceCount]->performanceContext.psnr);
                         }
                     }
                     else {
