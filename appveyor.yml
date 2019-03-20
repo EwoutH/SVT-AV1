@@ -11,12 +11,13 @@ build:
   project: svt-av1.sln
 
 artifacts:
-    - path: bin\Release\*.*
-      name: $(APPVEYOR_PROJECT_NAME)
+    - path: bin\Release\SvtAv1*.exe
+    - path: bin\Release\SvtAv1*.dll
+    - path: bin\Release\SvtAv1*.lib
 
 deploy:
   - provider: GitHub
-    artifact: $(APPVEYOR_PROJECT_NAME)
+    artifact: bin\Release\*.*
     auth_token:
       secure: 'sf0pQXlPI+X6LoAR8QUJB74jjzNxcLGOXI3H0nbxJq8llvGPG/TAUd87hq5iHZXo'
     prerelease: true
