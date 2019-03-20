@@ -19,7 +19,7 @@ deploy:
   - provider: GitHub
     artifact: bin\Release\*.*
     auth_token:
-      secure: 'sf0pQXlPI+X6LoAR8QUJB74jjzNxcLGOXI3H0nbxJq8llvGPG/TAUd87hq5iHZXo'
+      secure: 'hY5Mk6KOwgQ97TzEBsM7Woqr1ZIm5QTvHg8EvxMV1x8j3wk/3mNBMqWFFbEIBK0i'
     prerelease: true
     on:
       appveyor_repo_tag: true
