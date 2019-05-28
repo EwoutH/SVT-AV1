@@ -2,14 +2,12 @@ language: c
 cache:
   ccache: true
   pip: true
-os:
-  - linux
-  - osx
+
+# Default settings
 dist: xenial
 osx_image: xcode10.1
-compiler:
-  - clang
-  - gcc
+compiler: gcc
+
 addons:
   apt:
     packages:
@@ -32,7 +30,7 @@ env:
 stages:
   - name: style
   - name: test
-  - name: unittest 
+  - name: unittest
   - name: coveralls
     if: type != pull_request
   - name: valgrind
@@ -117,7 +115,6 @@ matrix:
     # FFmpeg interation build
     - name: FFmpeg patch
       stage: test
-      compiler: gcc
       env: build_type=release
       script:
         # Build and install SVT-AV1
@@ -131,7 +128,6 @@ matrix:
     # GStreamer interation build
     - name: GStreamer patch
       stage: test
-      compiler: gcc
       env: build_type=release
       script:
       # Build and install SVT-AV1
@@ -143,8 +139,6 @@ matrix:
       - sudo make install
     - name: Coveralls Linux+gcc
       stage: Coveralls
-      os: linux
-      compiler: gcc
       env: COVERALLS_PARALLEL=true build_type=debug CMAKE_EFLAGS="-DCOVERAGE=ON"
       script:
         - *base_script
@@ -161,16 +155,12 @@ matrix:
       after_script: *after_coveralls_script
     - name: Valgrind
       stage: valgrind
-      compiler: gcc
-      os: linux
       env: build_type=debug
       script:
         - *base_script
         - valgrind -- SvtAv1EncApp -enc-mode 8 -w 720 -h 486 -fps 60 -i akiyo_cif.y4m -n 150 -b test1.ivf
     - name: Unit Tests Linux+gcc
       stage: unittest
-      os: linux
-      compiler: gcc
       env: build_type=debug CMAKE_EFLAGS="-DBUILD_TESTING=ON" SVT_AV1_TEST_VECTOR_PATH=$TRAVIS_BUILD_DIR/test/vectors/
       script:
         - *base_script
