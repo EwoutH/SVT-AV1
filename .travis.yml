@@ -88,6 +88,9 @@ matrix:
       compiler: gcc # gcc = clang in macOS, unecessary duplicate
   include:
     # Coding style check
+    - name: Style check
+      stage: style
+      script:
         - git grep -I -n -P "\t|\r| $" -- . ':(exclude)*/compat/*' && exit 1
         - git grep -I -n -i "david" -- . ':(exclude)THANKS.md' ':(exclude).gitlab-ci.yml' && exit 1
         - git grep -I -l -z "" -- . ':(exclude)*/compat/*' | while IFS= read -r -d '' i; do
