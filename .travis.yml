@@ -89,6 +89,9 @@ matrix:
     # Coding style check
     - name: Style check
       stage: style
+      addons: skip
+      before_install: skip
+      install: skip
       script:
         - git grep -I -n -P "\t|\r| $" -- . ':(exclude)*/compat/*' && exit 1
         - git grep -I -n -i "david" -- . ':(exclude)THANKS.md' ':(exclude).gitlab-ci.yml' && exit 1
