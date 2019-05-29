@@ -103,7 +103,7 @@ matrix:
               fi;
           done
         - git remote rm upstream 2> /dev/null || true
-        - git remote add upstream https://github.com/OpenVisualCloud/SVT-AV1
+        - git remote add upstream https://github.com/OpenVisualCloud/SVT-AV1.git
         - git fetch -q upstream master
         - for i in $(git rev-list HEAD ^upstream/master); do
               echo "Checking commit message of $i";
