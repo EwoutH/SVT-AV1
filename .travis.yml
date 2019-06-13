@@ -30,6 +30,7 @@ notifications:
 env:
   - build_type=release
 stages:
+  - name: binary
   - name: style
   - name: test
   - name: unittest
@@ -82,12 +83,25 @@ matrix:
     - env: COVERALLS_PARALLEL=true build_type=debug CMAKE_EFLAGS="-DCOVERAGE=ON"
     - name: Unit Tests Linux+gcc
     - name: Unit Tests osx+clang
+    - name: Binary Identical?
     # Exclude these because if the encoder can run with a release build, the commit is probably fine. Also required for fast_finish.
   exclude:
     - os: osx
       compiler: gcc # gcc = clang in macOS, unecessary duplicate
   include:
     # Coding style check
+    - name: Binary Identical?
+      stage: binary
+      script:
+       - *base_script
+       - SvtAv1EncApp -enc-mode 8 -i akiyo_cif.y4m -n 60 -b test-pr-m8.ivf
+       - SvtAv1EncApp -enc-mode 1 -i akiyo_cif.y4m -n 3 -b test-pr-m0.ivf
+       - cd $TRAVIS_BUILD_DIR && cd ..
+       - rm -rf SVT-AV1 && git clone https://github.com/OpenVisualCloud/SVT-AV1.git && cd SVT-AV1 && ./Build/linux/build.sh release
+       - ./Bin/Release/SvtAv1EncApp -enc-mode 8 -i akiyo_cif.y4m -n 60 -b test-master-m8.ivf
+       - ./Bin/Release/SvtAv1EncApp -enc-mode 1 -i akiyo_cif.y4m -n 3 -b test-master-m0.ivf
+       - diff test-pr-m8.ivf test-master-m8.ivf
+       - diff test-pr-m0.ivf test-master-m0.ivf
     - name: Style check
       stage: style
       addons: skip
