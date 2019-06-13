@@ -1,4 +1,5 @@
 ## [upcoming]
+- AVX512 assembly
 - Inital decoder implementation
 - Static library support
 - Alt-ref pictures - temporal filtering
