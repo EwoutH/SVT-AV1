@@ -99,6 +99,7 @@ matrix:
        - mv -t $HOME test-pr-m8.ivf test-pr-m0.ivf akiyo_cif.y4m
        - cd $HOME && rm -rf SVT-AV1
        - git clone https://github.com/OpenVisualCloud/SVT-AV1.git && cd SVT-AV1
+       - mkdir -p $TRAVIS_BUILD_DIR/Build/linux/$build_type
        - *base_script
        - SvtAv1EncApp -enc-mode 8 -i akiyo_cif.y4m -n 120 -b test-master-m8.ivf
        - SvtAv1EncApp -enc-mode 0 -i akiyo_cif.y4m -n 3 -b test-master-m0.ivf
