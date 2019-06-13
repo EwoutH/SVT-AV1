@@ -41,7 +41,7 @@ stages:
 before_install:
   - "sudo chown -R travis: $HOME/.ccache"
   - export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/lib PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:/usr/local/lib/pkgconfig PATH="/usr/local/opt/ccache/libexec:$PATH"
-  - cd $HOME && export PATH="$CD:$PATH"
+  - cd $TRAVIS_BUILD_DIR/.. && export PATH="$CD:$PATH"
   - wget -nc https://raw.githubusercontent.com/OpenVisualCloud/SVT-AV1-Resources/master/video.tar.gz || wget -nc http://randomderp.com/video.tar.gz
   - tar xf video.tar.gz
   - mkdir -p $TRAVIS_BUILD_DIR/Build/linux/$build_type
@@ -96,7 +96,6 @@ matrix:
        - *base_script
        - SvtAv1EncApp -enc-mode 8 -i akiyo_cif.y4m -n 120 -b test-pr-m8.ivf
        - SvtAv1EncApp -enc-mode 1 -i akiyo_cif.y4m -n 3 -b test-pr-m0.ivf
-       - mv akiyo_cif.y4m $TRAVIS_BUILD_DIR/..
        - cd $TRAVIS_BUILD_DIR/..
        - rm -rf SVT-AV1 && git clone https://github.com/OpenVisualCloud/SVT-AV1.git
        - *base_script
