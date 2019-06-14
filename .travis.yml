@@ -95,8 +95,8 @@ matrix:
        - export PATH="$HOME:$PATH"
        - *base_script
        - mv -t $HOME akiyo_cif.y4m
-       - SvtAv1EncApp -enc-mode 8 -i $HOME/akiyo_cif.y4m -n 120 -b test-pr-m8.ivf
-       - SvtAv1EncApp -enc-mode 0 -i $HOME/akiyo_cif.y4m -n 3 -b test-pr-m0.ivf
+       - SvtAv1EncApp -enc-mode 8 -i $HOME/akiyo_cif.y4m -n 119 -b test-pr-m8.ivf
+       - SvtAv1EncApp -enc-mode 1 -i $HOME/akiyo_cif.y4m -n 3 -b test-pr-m0.ivf
        - mv -t $HOME test-pr-m8.ivf test-pr-m0.ivf
        - cd $HOME && rm -rf SVT-AV1
        - git clone https://github.com/OpenVisualCloud/SVT-AV1.git && cd SVT-AV1
