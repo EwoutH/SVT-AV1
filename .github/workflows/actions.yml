@@ -11,3 +11,5 @@ jobs:
     - uses: actions/checkout@master
     - name: Automatic Rebase
       uses: cirrus-actions/rebase@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.workflow-actions }}
