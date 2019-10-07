@@ -1,4 +1,5 @@
 language: c
+arch: arm64
 cache:
   ccache: true
   pip: true
