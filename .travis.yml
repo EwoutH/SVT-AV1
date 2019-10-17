@@ -41,7 +41,7 @@ before_install:
   - tar xf video.tar.gz
   - mkdir -p $TRAVIS_BUILD_DIR/Build/linux/${build_type:-Release}
 install:
-  - pip3 install --user cpp-coveralls
+  - pip install --user cpp-coveralls
   - export PATH=/Users/travis/Library/Python/2.7/bin:${PATH}
   - |
     if [ "$TRAVIS_OS_NAME" != "osx" ]; then
