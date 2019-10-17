@@ -1,5 +1,7 @@
 language: c
 arch: arm64
+cache:
+  pip: true
 os:
   - linux
   - osx
