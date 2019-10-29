@@ -3,7 +3,7 @@
 * SPDX - License - Identifier: BSD - 2 - Clause - Patent
 */
 
-#include "EbPackUnPack_SSE2.h"
+#include "EbPackUnPack.h"
 
 #include <emmintrin.h>
 #include <stdint.h>

@@ -3,8 +3,8 @@
 * SPDX - License - Identifier: BSD - 2 - Clause - Patent
 */
 
-#include "EbAvcStyleMcp_SSE2.h"
-#include "EbMcp_SSE2.h" // THIS SHOULD BE _SSE2 in the future
+#include "EbAvcStyleMcp.h"
+#include "EbMcp.h" // THIS SHOULD BE _SSE2 in the future
 #include "emmintrin.h"
 void avc_style_copy_sse2(
     EbByte               ref_pic,

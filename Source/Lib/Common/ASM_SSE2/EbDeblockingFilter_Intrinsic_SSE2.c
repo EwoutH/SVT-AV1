@@ -6,7 +6,7 @@
 #include "emmintrin.h"
 #include "EbDefinitions.h"
 
-#include "EbDeblockingFilter_SSE2.h"
+#include "EbDeblockingFilter.h"
 
 /***********************************************************************************/
 // synonyms.h
@@ -24,7 +24,7 @@ static INLINE void xx_storel_32(void *const a, const __m128i v) {
 }
 
 /***********************************************************************************/
-// lpf_common_sse2.h
+// lpf_common.h
 
 static INLINE void highbd_transpose6x6_sse2(__m128i *x0, __m128i *x1,
     __m128i *x2, __m128i *x3,

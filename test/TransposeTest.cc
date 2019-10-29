@@ -19,7 +19,7 @@
 #include "random.h"
 #include "util.h"
 #include "transpose_avx2.h"
-#include "transpose_sse2.h"
+#include "transpose.h"
 
 namespace {
 

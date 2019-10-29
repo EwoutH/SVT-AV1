@@ -14,8 +14,8 @@
 #include <tmmintrin.h>
 #include "EbTransforms.h"
 #include "av1_inv_txfm_ssse3.h"
-#include "av1_txfm_sse2.h"
-#include "transpose_sse2.h"
+#include "av1_txfm.h"
+#include "transpose.h"
 
 // TODO(binpengsmail@gmail.com): replace some for loop with do {} while
 

@@ -10,7 +10,7 @@ extern "C" {
 #endif
 
 #include "EbPackUnPack_C.h"
-#include "EbPackUnPack_SSE2.h"
+#include "EbPackUnPack.h"
 #include "EbPackUnPack_AVX2.h"
 #include "EbPictureOperators.h"
 

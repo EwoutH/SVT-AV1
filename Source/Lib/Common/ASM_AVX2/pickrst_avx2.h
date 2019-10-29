@@ -10,7 +10,7 @@
 #include "aom_dsp_rtcd.h"
 #include "EbPictureOperators_AVX2.h"
 #include "EbRestoration.h"
-#include "transpose_sse2.h"
+#include "transpose.h"
 #include "transpose_avx2.h"
 
 EB_ALIGN(16)

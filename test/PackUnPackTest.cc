@@ -37,7 +37,7 @@
 #include "EbDefinitions.h"
 #include "EbPackUnPack_AVX2.h"
 #include "EbPictureOperators_AVX2.h"
-#include "EbPackUnPack_SSE2.h"
+#include "EbPackUnPack.h"
 #include "EbPackUnPack_C.h"
 #include "EbIntraPrediction.h"
 #include "EbUnitTestUtility.h"

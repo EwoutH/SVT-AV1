@@ -10,7 +10,7 @@
  */
 
 #include <emmintrin.h>
-#include "EbHighbdIntraPrediction_SSE2.h"
+#include "EbHighbdIntraPrediction.h"
 #include "EbDefinitions.h"
 #include "aom_dsp_rtcd.h"
 

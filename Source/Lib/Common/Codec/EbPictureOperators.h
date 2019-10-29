@@ -7,7 +7,7 @@
 #define EbPictureOperators_h
 
 #include "EbPictureOperators_C.h"
-#include "EbPictureOperators_SSE2.h"
+#include "EbPictureOperators.h"
 #include "EbPictureOperators_SSE4_1.h"
 #include "EbPictureOperators_AVX2.h"
 #include "EbPictureOperators_AVX512.h"

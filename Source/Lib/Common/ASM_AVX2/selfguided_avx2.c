@@ -16,7 +16,7 @@
 #include "synonyms.h"
 #include "synonyms_avx2.h"
 #include "transpose_avx2.h"
-#include "transpose_sse2.h"
+#include "transpose.h"
 
 static INLINE void cvt_16to32bit_8x8(const __m128i s[8], __m256i r[8]) {
     r[0] = _mm256_cvtepu16_epi32(s[0]);

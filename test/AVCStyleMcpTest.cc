@@ -37,9 +37,9 @@
 #undef _GNU_SOURCE  // defined in EbThreads.h
 #endif
 #include "EbAvcStyleMcp.h"
-#include "EbMcp_SSE2.h"
+#include "EbMcp.h"
 #include "EbAvcStyleMcp_SSSE3.h"
-#include "EbAvcStyleMcp_SSE2.h"
+#include "EbAvcStyleMcp.h"
 #include "EbDefinitions.h"
 #include "EbIntraPrediction.h"
 #include "random.h"

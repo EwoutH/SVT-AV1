@@ -28,7 +28,7 @@
 #undef _GNU_SOURCE  // defined in EbThreads.h
 #endif
 
-#include "EbMcp_SSE2.h"
+#include "EbMcp.h"
 #include "EbIntraPrediction.h"
 #include "EbDefinitions.h"
 #include "random.h"

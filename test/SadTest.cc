@@ -39,7 +39,7 @@
 #include "gtest/gtest.h"
 #include "aom_dsp_rtcd.h"
 #include "EbComputeSAD.h"
-#include "EbMeSadCalculation_SSE2.h"
+#include "EbMeSadCalculation.h"
 #include "EbMotionEstimation.h"
 #include "EbMotionEstimationContext.h"
 #include "EbUnitTestUtility.h"

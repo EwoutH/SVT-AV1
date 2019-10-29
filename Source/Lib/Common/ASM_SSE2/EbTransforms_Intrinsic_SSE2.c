@@ -4,7 +4,7 @@
 */
 
 #include "EbDefinitions.h"
-#include "EbIntrinMacros16bit_SSE2.h"
+#include "EbIntrinMacros16bit.h"
 #include <emmintrin.h>
 
 /*****************************

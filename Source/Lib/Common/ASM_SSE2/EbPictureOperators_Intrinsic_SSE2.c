@@ -3,7 +3,7 @@
 * SPDX - License - Identifier: BSD - 2 - Clause - Patent
 */
 
-#include "EbPictureOperators_SSE2.h"
+#include "EbPictureOperators.h"
 #include <emmintrin.h>
 #include "EbDefinitions.h"
 

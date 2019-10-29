@@ -18,7 +18,7 @@
 #include "EbRestorationPick.h"
 #include "EbUtility.h"
 #include "pickrst_avx2.h"
-#include "transpose_sse2.h"
+#include "transpose.h"
 #include "transpose_avx2.h"
 
 static INLINE uint8_t find_average_avx2(const uint8_t *src, int32_t h_start,

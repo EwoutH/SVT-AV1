@@ -34,7 +34,7 @@
 #include "EbUtility.h"
 #include "EbDeblockingFilter.h"
 #include "acm_random.h"
-#include "EbDeblockingFilter_SSE2.h"
+#include "EbDeblockingFilter.h"
 #include "loopfilter_ref.h"
 
 using ::testing::make_tuple;

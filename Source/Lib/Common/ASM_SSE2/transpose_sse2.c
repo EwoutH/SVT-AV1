@@ -7,7 +7,7 @@
 
 #include "EbDefinitions.h"
 
-#include "transpose_sse2.h"
+#include "transpose.h"
 
 void transpose_8bit_4x4_reg128bit_instance_sse2(const __m128i *const in,
                                                 __m128i *const out) {

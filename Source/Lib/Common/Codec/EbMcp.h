@@ -6,7 +6,7 @@
 #ifndef EBMCP_H
 #define EBMCP_H
 
-#include "EbMcp_SSE2.h"
+#include "EbMcp.h"
 
 #include "EbDefinitions.h"
 #include "EbUtility.h"

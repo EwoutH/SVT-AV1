@@ -5,7 +5,7 @@
 
 #include "stdint.h"
 #include "emmintrin.h"
-#include "EbComputeSAD_SSE2.h"
+#include "EbComputeSAD.h"
 
 uint32_t combined_averaging4x_msad_sse2_intrin(
     uint8_t  *src,

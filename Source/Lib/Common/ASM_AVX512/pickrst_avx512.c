@@ -10,7 +10,7 @@
 #include "EbRestoration.h"
 #include "EbUtility.h"
 #include "pickrst_avx2.h"
-#include "transpose_sse2.h"
+#include "transpose.h"
 #include "transpose_avx2.h"
 
 #ifndef NON_AVX512_SUPPORT

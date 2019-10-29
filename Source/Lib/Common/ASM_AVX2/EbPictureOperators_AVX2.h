@@ -8,7 +8,7 @@
 
 #include <immintrin.h>
 #include "EbDefinitions.h"
-#include "EbPictureOperators_SSE2.h"
+#include "EbPictureOperators.h"
 
 #ifdef __cplusplus
 extern "C" {

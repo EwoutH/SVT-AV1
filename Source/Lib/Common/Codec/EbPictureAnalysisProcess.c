@@ -21,7 +21,7 @@
 
 #include "EbComputeMean.h"
 #include "EbMeSadCalculation.h"
-#include "EbComputeMean_SSE2.h"
+#include "EbComputeMean.h"
 #include "EbCombinedAveragingSAD_Intrinsic_AVX2.h"
 
 #define VARIANCE_PRECISION        16

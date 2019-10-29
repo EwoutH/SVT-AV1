@@ -4,7 +4,7 @@
 */
 
 #include "emmintrin.h"
-#include "EbComputeMean_SSE2.h"
+#include "EbComputeMean.h"
 
 uint64_t compute_subd_mean_of_squared_values8x8_sse2_intrin(
     uint8_t *  input_samples,      // input parameter, input samples Ptr

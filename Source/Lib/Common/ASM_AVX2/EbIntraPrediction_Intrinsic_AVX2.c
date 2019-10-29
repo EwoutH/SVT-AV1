@@ -7,9 +7,9 @@
 
 #include "EbDefinitions.h"
 #include "immintrin.h"
-#include "EbIntrinMacros_SSE2.h"
+#include "EbIntrinMacros.h"
 #include "EbIntraPrediction_AVX2.h"
-#include "lpf_common_sse2.h"
+#include "lpf_common.h"
 #include "txfm_common_avx2.h"
 #include "aom_dsp_rtcd.h"
 
