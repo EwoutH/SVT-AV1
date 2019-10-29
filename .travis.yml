@@ -1,6 +1,8 @@
 # Environment variables
 language: c
 arch: arm64
+git:
+  depth: 3
 cache:
   ccache: true
   pip: true
