@@ -49,6 +49,7 @@ matrix:
   include:
     # Coding style check
     - name: Style check
+      stage: 1
       addons: skip
       before_install: skip
       install: skip
@@ -89,6 +90,7 @@ matrix:
       compiler: clang
     # FFmpeg interation build
     - name: FFmpeg patch
+      stage: 2
       env: build_type=release
       script:
         # Build and install SVT-AV1
@@ -135,6 +137,7 @@ matrix:
 
     # Valgrind on Linux and macOS
     - name: Valgrind
+      stage: 3
       env: build_type=debug
       script:
         - *base_script
