@@ -14,16 +14,6 @@ addons:
 notifications:
   webhooks: https://coveralls.io/webhook
 
-# Pipeline stages
-stages:
-  - name: style
-  - name: test
-  - name: unittest
-  - name: coveralls
-    if: type != pull_request
-  - name: valgrind
-    if: type != pull_request
-
 # Default scripts
 before_install:
   - "sudo chown -R travis: $HOME/.ccache"
@@ -78,10 +68,9 @@ before_cache:
 # Build matrix
 matrix:
   fast_finish: true
-    include:
+  include:
     # Coding style check
     - name: Style check
-      stage: main
       addons: skip
       before_install: skip
       install: skip
