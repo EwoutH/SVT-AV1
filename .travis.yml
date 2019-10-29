@@ -11,10 +11,6 @@ addons:
   apt:
     sources:
     packages: cmake yasm valgrind libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev
-  homebrew:
-    packages:
-      - yasm
-      - ccache
 notifications:
   webhooks: https://coveralls.io/webhook
 
@@ -82,17 +78,10 @@ before_cache:
 # Build matrix
 matrix:
   fast_finish: true
-  allow_failures:
-    - name: Binary Identical?
-    - name: Valgrind
-    - env: COVERALLS_PARALLEL=true build_type=debug CMAKE_EFLAGS="-DCOVERAGE=ON"
-    - name: Unit Tests Linux+gcc
-    - name: Unit Tests osx+clang
-    # Exclude these because if the encoder can run with a release build, the commit is probably fine. Also required for fast_finish.
-  include:
+    include:
     # Coding style check
     - name: Style check
-      stage: style
+      stage: main
       addons: skip
       before_install: skip
       install: skip
@@ -125,15 +114,11 @@ matrix:
           done
     # GCC & Clang builds
     - name: Linux GCC 7 build
-      stage: test
     - name: Linux GCC 8 build
       env: build_type=release CC=/usr/bin/gcc-8 CXX=/usr/bin/g++-8
     - name: Linux GCC 9 build
       env: build_type=release CC=/usr/bin/gcc-9 CXX=/usr/bin/g++-9
     - name: Linux Clang build
-      compiler: clang
-    - name: macOS Clang build
-      os: osx
       compiler: clang
     # FFmpeg interation build
     - name: FFmpeg patch
@@ -183,7 +168,6 @@ matrix:
 
     # Coveralls on Linux and macOS
     - name: Coveralls Linux+gcc
-      stage: Coveralls
       env: COVERALLS_PARALLEL=true build_type=debug CMAKE_EFLAGS="-DCOVERAGE=ON"
       script:
         - *base_script
@@ -200,7 +184,6 @@ matrix:
 
     # Valgrind on Linux and macOS
     - name: Valgrind
-      stage: valgrind
       env: build_type=debug
       script:
         - *base_script
@@ -208,7 +191,6 @@ matrix:
 
     # Unittests on Linux and macOS
     - name: Unit Tests Linux+gcc
-      stage: unittest
       env: build_type=release CMAKE_EFLAGS="-DBUILD_TESTING=ON" SVT_AV1_TEST_VECTOR_PATH=$TRAVIS_BUILD_DIR/test/vectors/
       script:
         - *base_script
