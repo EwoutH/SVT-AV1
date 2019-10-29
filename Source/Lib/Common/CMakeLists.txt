@@ -15,7 +15,7 @@ macro(test_apply_compiler_flags)
         endif()
     endforeach()
     if(CMAKE_BUILD_TYPE MATCHES "[Dd][Ee][Bb][Uu][Gg]")
-        message(STATUS "${CMAKE_CURRENT_SOURCE_DIR}: ${CMAKE_C_FLAGS}")
+        message(STATUS "${CMAKE_CURRENT_SOURCE_DIR}: ${CMAKE_C_FLAGS}"))
     endif()
 endmacro()
 
