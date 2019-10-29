@@ -31,7 +31,7 @@
 #include "EbPictureAnalysisProcess.h"
 #include "EbMcp.h"
 #include "av1me.h"
-#include "EbTemporalFiltering_sse4.h"
+#include "EbTemporalFiltering.h"
 #include "EbObject.h"
 #include "EbPictureOperators.h"
 #include "EbInterPrediction.h"

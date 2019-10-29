@@ -38,7 +38,7 @@
 #endif
 #include "EbAvcStyleMcp.h"
 #include "EbMcp.h"
-#include "EbAvcStyleMcp_SSSE3.h"
+#include "EbAvcStyleMcp.h"
 #include "EbAvcStyleMcp.h"
 #include "EbDefinitions.h"
 #include "EbIntraPrediction.h"

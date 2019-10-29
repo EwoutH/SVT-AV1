@@ -7,7 +7,7 @@
 #define EbComputeMean_h
 
 #include "EbComputeMean.h"
-#include "EbCombinedAveragingSAD_Intrinsic_AVX2.h"
+#include "EbCombinedAveragingSAD_Intrinsic.h"
 #include "EbDefinitions.h"
 
 #ifdef __cplusplus

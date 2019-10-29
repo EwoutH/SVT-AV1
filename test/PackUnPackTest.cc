@@ -35,8 +35,8 @@
 #endif
 
 #include "EbDefinitions.h"
-#include "EbPackUnPack_AVX2.h"
-#include "EbPictureOperators_AVX2.h"
+#include "EbPackUnPack.h"
+#include "EbPictureOperators.h"
 #include "EbPackUnPack.h"
 #include "EbPackUnPack_C.h"
 #include "EbIntraPrediction.h"

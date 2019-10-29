@@ -6,7 +6,7 @@
 #ifndef EbIntraPrediction_h
 #define EbIntraPrediction_h
 
-#include "EbIntraPrediction_AVX2.h"
+#include "EbIntraPrediction.h"
 
 #include "EbDefinitions.h"
 #include "EbUtility.h"

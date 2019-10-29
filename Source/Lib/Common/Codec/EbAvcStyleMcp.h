@@ -7,7 +7,7 @@
 #define EBAVCSTYLEMCP_H
 
 #include "EbAvcStyleMcp.h"
-#include "EbAvcStyleMcp_SSSE3.h"
+#include "EbAvcStyleMcp.h"
 
 #include "EbPictureOperators.h"
 

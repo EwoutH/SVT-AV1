@@ -22,7 +22,7 @@
 extern "C" {
 #endif
 
-#include "EbTransforms_AVX2.h"
+#include "EbTransforms.h"
 #include "EbSequenceControlSet.h"
 #include "EbPictureControlSet.h"
 #include "EbEncDecProcess.h"

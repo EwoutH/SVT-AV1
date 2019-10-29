@@ -22,7 +22,7 @@
 #include "EbComputeMean.h"
 #include "EbMeSadCalculation.h"
 #include "EbComputeMean.h"
-#include "EbCombinedAveragingSAD_Intrinsic_AVX2.h"
+#include "EbCombinedAveragingSAD_Intrinsic.h"
 
 #define VARIANCE_PRECISION        16
 #define  LCU_LOW_VAR_TH                5

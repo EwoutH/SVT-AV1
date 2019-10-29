@@ -6,7 +6,7 @@
 #include "gtest/gtest.h"
 #include "aom_dsp_rtcd.h"
 #include "EbDefinitions.h"
-#include "EbComputeSAD_AVX2.h"
+#include "EbComputeSAD.h"
 #include "EbComputeSAD_C.h"
 #include "EbComputeSAD_SSE4_1.h"
 #include "EbMeSadCalculation.h"

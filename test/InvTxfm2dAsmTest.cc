@@ -35,7 +35,7 @@
 #include "EbTransforms.h"
 #include "EbUnitTestUtility.h"
 #include "TxfmCommon.h"
-#include "av1_inv_txfm_ssse3.h"
+#include "av1_inv_txfm.h"
 
 using svt_av1_test_tool::SVTRandom;  // to generate the random
 namespace {

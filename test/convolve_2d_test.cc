@@ -36,7 +36,7 @@
 #include "EbTime.h"
 #include "EbUtility.h"
 #include "convolve.h"
-#include "convolve_avx2.h"
+#include "convolve.h"
 #include "filter.h"
 #if defined(_MSC_VER)
 #pragma warning(suppress : 4324)

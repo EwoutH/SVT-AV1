@@ -25,7 +25,7 @@
 #include "util.h"
 
 extern "C" {
-#include "EbTemporalFiltering_sse4.h"
+#include "EbTemporalFiltering.h"
 void svt_av1_highbd_apply_temporal_filter_sse4_1(
     const uint16_t *y_src, int y_src_stride, const uint16_t *y_pre,
     int y_pre_stride, const uint16_t *u_src, const uint16_t *v_src,

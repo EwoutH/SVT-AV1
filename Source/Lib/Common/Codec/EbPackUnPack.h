@@ -11,7 +11,7 @@ extern "C" {
 
 #include "EbPackUnPack_C.h"
 #include "EbPackUnPack.h"
-#include "EbPackUnPack_AVX2.h"
+#include "EbPackUnPack.h"
 #include "EbPictureOperators.h"
 
     typedef void(*EbEncPack2DType)(
