@@ -14,19 +14,10 @@ set(DEC_VERSION ${DEC_VERSION_MAJOR}.${DEC_VERSION_MINOR}.${DEC_VERSION_PATCH})
 include_directories(${PROJECT_SOURCE_DIR}/Source/API/
     ${PROJECT_SOURCE_DIR}/Source/Lib/Common/Codec/
     ${PROJECT_SOURCE_DIR}/Source/Lib/Common/C_DEFAULT/
-    ${PROJECT_SOURCE_DIR}/Source/Lib/Common/ASM_SSE2/
-    ${PROJECT_SOURCE_DIR}/Source/Lib/Common/ASM_SSSE3/
-    ${PROJECT_SOURCE_DIR}/Source/Lib/Common/ASM_SSE4_1/
-    ${PROJECT_SOURCE_DIR}/Source/Lib/Common/ASM_AVX2/
-    ${PROJECT_SOURCE_DIR}/Source/Lib/Common/ASM_AVX512/
     ${PROJECT_SOURCE_DIR}/Source/Lib/Decoder/Codec/)
 
 link_directories(${PROJECT_SOURCE_DIR}/Source/Lib/Common/ASM_SSE2/
     ${PROJECT_SOURCE_DIR}/Source/Lib/Common/C_DEFAULT/
-    ${PROJECT_SOURCE_DIR}/Source/Lib/Common/ASM_SSSE3/
-    ${PROJECT_SOURCE_DIR}/Source/Lib/Common/ASM_SSE4_1/
-    ${PROJECT_SOURCE_DIR}/Source/Lib/Common/ASM_AVX2/
-    ${PROJECT_SOURCE_DIR}/Source/Lib/Common/ASM_AVX512/
     ${PROJECT_SOURCE_DIR}/Source/Lib/Decoder/Codec/)
 
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/Bin/${CMAKE_BUILD_TYPE}/)
@@ -58,12 +49,7 @@ endif()
 add_library(SvtAv1Dec
     ${all_files}
     $<TARGET_OBJECTS:COMMON_CODEC>
-    $<TARGET_OBJECTS:COMMON_C_DEFAULT>
-    $<TARGET_OBJECTS:COMMON_ASM_SSE2>
-    $<TARGET_OBJECTS:COMMON_ASM_SSSE3>
-    $<TARGET_OBJECTS:COMMON_ASM_SSE4_1>
-    $<TARGET_OBJECTS:COMMON_ASM_AVX2>
-    $<TARGET_OBJECTS:COMMON_ASM_AVX512>)
+    $<TARGET_OBJECTS:COMMON_C_DEFAULT>)
 set_target_properties(SvtAv1Dec PROPERTIES VERSION ${DEC_VERSION})
 set_target_properties(SvtAv1Dec PROPERTIES SOVERSION ${DEC_VERSION_MAJOR})
 target_link_libraries(SvtAv1Dec ${PLATFORM_LIBS})

@@ -15,11 +15,6 @@ include_directories(${PROJECT_SOURCE_DIR}/test/
     ${PROJECT_SOURCE_DIR}/Source/API
     ${PROJECT_SOURCE_DIR}/Source/Lib/Common/Codec
     ${PROJECT_SOURCE_DIR}/Source/Lib/Common/C_DEFAULT/
-    ${PROJECT_SOURCE_DIR}/Source/Lib/Common/ASM_SSE2/
-    ${PROJECT_SOURCE_DIR}/Source/Lib/Common/ASM_SSSE3/
-    ${PROJECT_SOURCE_DIR}/Source/Lib/Common/ASM_SSE4_1/
-    ${PROJECT_SOURCE_DIR}/Source/Lib/Common/ASM_AVX2/
-    ${PROJECT_SOURCE_DIR}/Source/Lib/Common/ASM_AVX512/
     ${PROJECT_SOURCE_DIR}/Source/Lib/Encoder/Codec
     ${PROJECT_SOURCE_DIR}/Source/Lib/Decoder/Codec
     ${PROJECT_SOURCE_DIR}/Source/App/EncApp
@@ -61,11 +56,6 @@ file(GLOB all_files
 set(lib_list
     $<TARGET_OBJECTS:COMMON_CODEC>
     $<TARGET_OBJECTS:COMMON_C_DEFAULT>
-    $<TARGET_OBJECTS:COMMON_ASM_SSE2>
-    $<TARGET_OBJECTS:COMMON_ASM_SSSE3>
-    $<TARGET_OBJECTS:COMMON_ASM_SSE4_1>
-    $<TARGET_OBJECTS:COMMON_ASM_AVX2>
-    $<TARGET_OBJECTS:COMMON_ASM_AVX512>
     gtest_all)
 if(UNIX)
   # App Source Files
