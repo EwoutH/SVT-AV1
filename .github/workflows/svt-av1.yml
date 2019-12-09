@@ -10,7 +10,8 @@ jobs:
     - uses: actions/checkout@v1
       with:
         fetch-depth: 1
-    - name: compile
+    - name: Compile SVT-AV1
       run: |
         export CC=gcc-9 CXX=g++-9
         ./Build/linux/build.sh release
+        ./Bin/Release/SvtAv1EncApp -help
