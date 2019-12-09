@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Install dependencies
-      run: sudo apt-get install -y gcc-9 g++-9 nams yasm cmake
+      run: sudo apt-get install -y gcc-9 g++-9 nasm yasm cmake
     - uses: actions/checkout@v1
       with:
         fetch-depth: 1
