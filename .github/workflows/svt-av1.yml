@@ -5,8 +5,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v1
+      with:
+        fetch-depth: 1
     - name: compile
-      run: | 
+      run: |
         pwd
         cd SVT-AV1
         ./Build/linux/build.sh release
