@@ -10,6 +10,4 @@ jobs:
         fetch-depth: 1
     - name: compile
       run: |
-        pwd
-        cd SVT-AV1
         ./Build/linux/build.sh release
