@@ -1,9 +1,9 @@
 name: svt-av1
-runs-on: ubuntu-latest
 on: [push, pull_request]
 
 jobs:
   build:
+    runs-on: ubuntu-latest
     steps:
     - name: compile
       run: ./Build/linux/build.sh release
