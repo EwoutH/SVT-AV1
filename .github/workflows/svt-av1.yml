@@ -4,4 +4,6 @@ on: [push, pull_request]
 
 jobs:
   build:
-    run: ./Build/linux/build.sh release
+    steps:
+    - name: compile
+      run: ./Build/linux/build.sh release
