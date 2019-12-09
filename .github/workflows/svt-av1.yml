@@ -6,4 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: compile
-      run: ./Build/linux/build.sh release
+      run: | 
+        cd
+        cd SVT-AV1
+        ./Build/linux/build.sh release
