@@ -7,6 +7,6 @@ jobs:
     steps:
     - name: compile
       run: | 
-        cd
+        pwd
         cd SVT-AV1
         ./Build/linux/build.sh release
