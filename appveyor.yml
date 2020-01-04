@@ -10,8 +10,8 @@ environment:
   PKG_CONFIG_PATH: C:/msys64/mingw64/lib/pkgconfig
   matrix:
     - generator: Visual Studio 2019
-      CFLAGS: /WX
-      CXXFLAGS: /WX
+      CFLAGS: /WX /W3
+      CXXFLAGS: /WX /W3
     - generator: Unix Makefiles
 
 matrix:
