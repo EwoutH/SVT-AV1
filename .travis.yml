@@ -11,8 +11,10 @@ git:
 addons:
   apt:
     update: true
+    sources:
+      - sourceline: "ppa:ubuntu-toolchain-r/test"
     packages:
-      - &native_deps cmake yasm
+      - &native_deps cmake yasm gcc-9 g++-9
   homebrew:
     update: true
     packages:
@@ -94,7 +96,7 @@ jobs:
     - name: Arm64 GCC 9 build
       env: build_type=release CC=gcc-9 CXX=g++-9
       arch: arm64
-    - name: PowerPC GCC 7 build
+    - name: PowerPC GCC 9 build
       env: build_type=release CC=gcc-9 CXX=g++-9
       arch: ppc64le
     - name: IBM Z GCC 9 build
