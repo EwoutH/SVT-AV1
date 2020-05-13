@@ -104,7 +104,7 @@ jobs:
       arch: s390x
     # Valgrind on Linux
     - name: Valgrind
-      env: build_type=debug
+      env: build_type=debug CC=gcc-10 CXX=g++-10
       addons:
         apt:
           update: true
