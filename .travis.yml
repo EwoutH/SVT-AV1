@@ -24,7 +24,7 @@ addons:
 
 env:
   global:
-    - build_type=release LD_LIBRARY_PATH=/usr/local/lib PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
+    - build_type=release CC=gcc-10 CXX=g++-10 LD_LIBRARY_PATH=/usr/local/lib PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 
 # Default scripts
 install:
@@ -94,17 +94,17 @@ jobs:
         - *10bit_test
     # Multiple CPU Architectures
     - name: Arm64 GCC 10 build
-      env: build_type=release CC=gcc-10 CXX=g++-10
+      env: build_type=release
       arch: arm64
     - name: PowerPC GCC 10 build
-      env: build_type=release CC=gcc-10 CXX=g++-10
+      env: build_type=release
       arch: ppc64le
     - name: IBM Z GCC 10 build
-      env: build_type=release CC=gcc-10 CXX=g++-10
+      env: build_type=release
       arch: s390x
     # Valgrind on Linux
     - name: Valgrind
-      env: build_type=debug CC=gcc-10 CXX=g++-10
+      env: build_type=debug
       addons:
         apt:
           update: true
