@@ -16,7 +16,8 @@ addons:
 
 env:
   global:
-    - build_type=Release CC="ccache gcc-10" CXX="ccache g++-10" CCACHE_DIR=$HOME/.ccache CFLAGS=-Werror
+    - build_type=Release CC="ccache gcc-10" CXX="ccache g++-10" CCACHE_DIR=$HOME/.ccache
+    - CFLAGS="-march=native -mtune=native -Werror" CXXFLAGS="-march=native -mtune=native"
 
 # Default scripts
 install:
