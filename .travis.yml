@@ -17,7 +17,7 @@ addons:
 env:
   global:
     - build_type=Release CC="ccache gcc-10" CXX="ccache g++-10" CCACHE_DIR=$HOME/.ccache
-    - CFLAGS="-march=native -mtune=native -Werror" CXXFLAGS="-march=native -mtune=native"
+    - CFLAGS="-march=native -mtune=native" CXXFLAGS="-march=native -mtune=native"
 
 # Default scripts
 install:
@@ -51,6 +51,8 @@ jobs:
     - name: Arm64 GCC build
       arch: arm64
     - name: PowerPC GCC build
+      CFLAGS: "-mcpu=native -mtune=native"
+      CXXFLAGS: "-mcpu=native -mtune=native"
       arch: ppc64le
     - name: IBM Z GCC build
       arch: s390x
