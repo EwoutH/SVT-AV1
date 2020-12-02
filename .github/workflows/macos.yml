@@ -45,7 +45,7 @@ jobs:
             "CCACHE_DIR=$HOME/.ccache" >> $GITHUB_ENV
           clang -v
       - name: Run CMake
-        run: cmake -S "$GITHUB_WORKSPACE" -B Build -G"${{ matrix.generator }}" -DCMAKE_OSX_ARCHITECTURES="x86_64;arm64" -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF
+        run: cmake -S "$GITHUB_WORKSPACE" -B Build -G"${{ matrix.generator }}" -DCMAKE_OSX_ARCHITECTURES="arm64" -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF
       - name: Run Install
         run: sudo -E cmake --build Build --parallel "$(sysctl -n hw.ncpu)" --config Release --target install
       - name: Download videos
