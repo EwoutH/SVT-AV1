@@ -17,9 +17,9 @@ on:
 
 jobs:
   build:
-    runs-on: macos-10.15
+    runs-on: macos-11.0
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
         include:
           - generator: Xcode
@@ -44,6 +44,10 @@ jobs:
             "PATH=/usr/local/opt/ccache/libexec:$PATH" \
             "CCACHE_DIR=$HOME/.ccache" >> $GITHUB_ENV
           clang -v
+      - name: Set CMake flags
+        run: |
+          export CFLAGS="-Ofast -march=armv8.4-a -target=arm64-apple-macos11"
+          export CXXFLAGS="-Ofast -march=armv8.4-a -target=arm64-apple-macos11"
       - name: Run CMake
         run: cmake -S "$GITHUB_WORKSPACE" -B Build -G"${{ matrix.generator }}" -DCMAKE_OSX_ARCHITECTURES="arm64" -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF
       - name: Run Install
